@@ -14,11 +14,11 @@ const displayPhTube = (categories) =>{
         // console.log(category.category_id)
         const categoryTab = document.createElement('div')
         categoryTab.innerHTML = `
-        <a onclick="handleTab('${category.category_id}')" class="tab bg-slate-200 mx-4">${category.category}</a>
+        <a onclick="handleTab('${category.category_id}')" class="tab bg-slate-200 mx-2 md:mx-4 lg:mx-4 mb-5">${category.category}</a>
         `
         tabContainer.appendChild(categoryTab)
     })
-    noContent(true)
+    
     // console.log(categories)
 }
 const handleTab = async (id)=>{
@@ -30,9 +30,10 @@ const handleTab = async (id)=>{
     cardContainer.innerHTML=""
     data.data.forEach(card=>{
         console.log(card)
+        noContent(data)
         const cardDiv = document.createElement('div');
         cardDiv.innerHTML=`
-             <div class="card card-compact bg-base-100">
+             <div class="card bg-base-100">
                 <figure class=" h-40"><img src="${card?.thumbnail}" alt="Shoes" /></figure>
                  <div class="pt-4 flex flex-row items-center ">
                     <img class="w-12 h-12 rounded-full" src="${card?.authors[0]?.profile_picture}." alt="">
@@ -49,18 +50,14 @@ const handleTab = async (id)=>{
         `
         cardContainer.appendChild(cardDiv)
     })
-    noContent(false)
+    // noContent(false)
     // console.log('rahil')
     // console.log(data.data)
 }
-const noContent = (content) =>{
+const noContent = (card) =>{
+    console.log(card.data)
     const NoContentHere = document.getElementById('no-content')
-    if(content){
-        NoContentHere.classList.remove('hidden')
-    }
-    else{
-        NoContentHere.classList.add('hidden')
-    }
+    
 }
 
 loadPhTube()

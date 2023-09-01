@@ -18,9 +18,11 @@ const displayPhTube = (categories) =>{
         `
         tabContainer.appendChild(categoryTab)
     })
+    noContent(true)
     // console.log(categories)
 }
 const handleTab = async (id)=>{
+    
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}
     `)
     const data = await response.json()
@@ -47,8 +49,18 @@ const handleTab = async (id)=>{
         `
         cardContainer.appendChild(cardDiv)
     })
+    noContent(false)
     // console.log('rahil')
     // console.log(data.data)
+}
+const noContent = (content) =>{
+    const NoContentHere = document.getElementById('no-content')
+    if(content){
+        NoContentHere.classList.remove('hidden')
+    }
+    else{
+        NoContentHere.classList.add('hidden')
+    }
 }
 
 loadPhTube()

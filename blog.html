@@ -1,24 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog JS</title>
+    <!-- tailwind and daisyUI link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- css style -->
+    <style>
+        .nav {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
 </head>
+
 <body>
-    <nav>
-        <div>
-            <h2 class="text-4xl">Qus: Discuss the scope of `var`, `let`, and `const`</h2>
-            <p>Ans:</p>
+    <nav class="m-5 lg:m-16 md:m-10  nav">
+        <h1 class="text-center text-4xl mb-10 underline font-semibold bg-slate-100 py-5 italic">WelCome To My Blog</h1>
+        <div class="">
+            <h2 class="text-xl lg:text-2xl font-medium"><Span class="font-bold">1.Qus:</Span> Discuss the scope of `var`, `let`,
+                and
+                `const`</h2> <br>
+
+            <h4 class="text-lg md:text-xl lg:text-2xl "><Span class="font-semibold">Ans:</Span> In the JavaScript, we can declare
+                to variables
+                in var, let and const. But they are deference. In this Blog, we can explain it.</h4>
+            <div class="ml-5 ">
+                <!-- var explain -->
+                <h2 class="font-semibold text-2xl my-5">Var</h2>
+                <p class="text-lg md:text-xl lg:text-2xl pb-4"><span class="bg-slate-200 py-1 px-2 rounded-lg">Var</span> is global
+                    scope and functional scope. We can access anywhere to <span class="bg-slate-200 p-2 rounded-lg"> var
+                    </span> variables. <br>
+
+                <p class="px-8 lg:pl-14 text-base mb-5 bg-slate-100 py-2 ">
+                    if(true){ <br>
+                    var num = 20: <br>
+                    } <br>
+                    console.log(num); <span class="text-gray-400 text-xs">//output:20</span> <br>
+                </p>
+
+                <p class="text-lg md:text-xl lg:text-2xl "> We can redeclare and resign to <span
+                        class="bg-slate-200 p-2 rounded-lg"> var
+                    </span> variable.</p>
+
+                <p class="px-8 lg:pl-14 text-base my-3 bg-slate-100 py-2 ">
+                    var name = "RahiL"; <br>
+                    console.log(nam); <span class="text-gray-400 text-xs">//output:RahiL</span> <br> <br>
+
+                    <span class="text-gray-400">//reassign</span> <br>
+                    name = "Hello world"; <br>
+                    console.log(nam); <span class="text-gray-400 text-xs">//output:Hello world</span> <br> <br>
+
+                    <span class="text-gray-400">//redeclare</span> <br>
+                    var name = "My name is RahiL"; <br>
+                    console.log(nam); <span class="text-gray-400 text-xs">//output:My name is RahiL</span> <br> <br>
+                </p>
+
+                </p>
+                <!-- let explain -->
+                <h2 class="text-2xl pb-4 font-semibold mt-5">Let</h2>
+                <p class="text-lg lg:text-xl pb-4"><span class="bg-slate-200 px-2 rounded-lg">let</span> is block scope. We can't
+                    access anywhere to <span class="bg-slate-200 px-2 rounded-lg">let</span> variables. <br>
+
+                <p class="px-8 lg:pl-14 text-base mb-5 my-2 bg-slate-100 py-2">
+                    if(true){ <br> 
+                    let num = 20: <br>
+                    console.log(nam); <span class="text-gray-400 text-xs">//output:20</span> <br>
+                    } <br>
+                    console.log(num); <span class="text-gray-400 text-xs">//output:ReferenceError: num is not
+                        define</span> <br>
+                </p>
+
+                <p class="text-xl"> We can reassign but can't be redeclare to <span
+                        class="bg-slate-200 px-2 rounded-lg">let</span> variable.</p> <br>
+
+                <p class="px-8 lg:pl-14 text-base my-2 pr-4 bg-slate-100 py-2">
+                    let name = "RahiL"; <br>
+                    console.log(nam); <span class="text-gray-400">//output:RahiL</span> <br> <br>
+
+                    <span class="text-gray-400">//reassign</span> <br>
+                    name = "Hello world"; <br>
+                    console.log(nam); <span class="text-gray-400">//output:Hello world</span> <br> <br>
+
+                    <span class="text-gray-400">//redeclare</span> <br>
+                    let name = "My name is RahiL"; <br>
+                    console.log(nam); <span class="text-gray-400">//// SyntaxError: Identifier 'number' has already been
+                        declared</span> <br> <br>
+
+                </p>
+
+                </p>
+                <!-- const explain -->
+                <h2 class="text-2xl pb-4 font-semibold mt-5">const</h2>
+                <p class="text-xl" ><span
+                        class="bg-slate-200 px-2 py-1 rounded-lg">const</span> is block scope. We can't access anywhere to
+                    <span class="bg-slate-200 px-2 py-1 rounded-lg">const</span> variables. As like <span
+                        class="bg-slate-200 px-2 py-1 rounded-lg">let</span> variables. <br>
+
+                <p class="px-8 lg:pl-14 text-base mb-5 my-2 bg-slate-100 py-2 ">
+                    if(true){ <br>
+                    let num = 20: <br>
+                    console.log(nam); <span class="text-gray-400 text-xs">//output:20</span>
+                    } <br>
+                    console.log(num); <span class="text-gray-400 text-xs">//output:ReferenceError: num is not
+                        define</span> <br>
+                </p>
+
+                <p class="text-xl"> We can't redeclare and resign to <span
+                        class="bg-slate-200 py-1 px-2 rounded-lg">const</span> variable.</p>
+
+                <p class="px-8 lg:pl-14 text-base bg-slate-100 p-4 my-4">
+                    let name = "RahiL"; <br>
+                    console.log(nam); <span class="text-gray-400">//output:RahiL</span> <br> <br>
+
+                    <span class="text-gray-400">//reassign</span> <br>
+                    name = "Hello world"; <br>
+                    console.log(nam); <span class="text-gray-400">//TypeError: Assignment to constant variable.</span>
+                    <br> <br>
+
+                    <span class="text-gray-400">//redeclare</span> <br>
+                    let name = "My name is RahiL"; <br>
+                    console.log(nam); <span class="text-gray-400">//// SyntaxError: Identifier 'number' has already been
+                        declared</span> <br> <br>
+
+                </p>
+
+
+                </p>
+            </div>
         </div>
+        <hr class="border my-4">
+        <!-- 2nd qus -->
         <div>
-            <h2>Qus: Tell us the use cases of `null` and `undefined`</h2>
-            <p>Ans:</p>
+            <h2 class="text-2xl"><Span class="font-bold">2. Qus:</Span> Tell us the use cases of null and undefined
+            </h2>
+            <div class="my-10 mx-5">
+                <h2 class="text-2xl font-semibold">Null</h2>
+                <div>
+                    <p class="text-xl"> Null is an empty value. It's meaning in JavaScript having no value. It's is also
+                        primitive type
+                        in JavaScript.</p>
+                    <p class="text-sm pl-8 my-2 bg-slate-100 py-2">
+                        let x = null;
+                        console.log( typeof (x)); <span class="text-gray-400 text-xs">//output:object</span>
+                    </p>
+                    <p class="text-xl">So, we can tell null is an object. It's like primitive data type </p>
+                </div>
+            </div>
+            <div class="mx-5 ">
+                <h2 class="text-2xl font-semibold">Undefined</h2>
+                <div>
+                    <p class="text-xl">Undefined means by not defined to in JavaScript.It's global object</p>
+                    <p class="pl-8 my-2 bg-slate-100 py-2">console.log( typeof undefined); <span
+                            class="text-gray-400 text-xs">//output:undefined</span></p>
+                    <p class="text-xl mb-3">so we can tell us undefined is undefined.</p>
+                    <div>
+                        <h2 class="text-xl">Many ways to we can get undefined</h2>
+                        <ul class="list-decimal italic pl-8">
+                            <li>Variable that not define</li>
+                            <li>function with no return</li>
+                            <li>in function parameter that is not passed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
+        <hr class="border my-4">
+        <!-- 3rd qus -->
         <div>
-            <h2>What do you mean by REST API?</h2>
-            <p></p>
+            <h2 class="text-2xl"><Span class="font-bold">3. Qus:</Span>What do you mean by REST API?
+            </h2>
+            <div>
+                <h2 class="ml-5 text-xl mt-5 ">REST full meaning is <span class="font-semibold">Representational State Transfer</span> and API full meaning is <span class="font-semibold">Application Programming Interface.</span></h2>
+                <p class="my-2 text-xl ml-5">REST is a way of access web service.It's a fexible way without having any processing data. It's used to fetch or given some information of web service. </p>
+                <p class="my-2 text-xl ml-5">REST API uses only HTTP request. In HTTP there are five methods used in a REST based arcitecture. The five method is post, get, put, patch and delete.</p>
+                <ul class="list-decimal italic text-lg my-2 ml-14">
+                    <li>Post: Post is used to send data to a server to create a new resource</li>
+                    <li>Get: Get is used to request data from a resource.</li>
+                    <li>Put: Put is used to  create a new resource or replace if the resource exist.</li>
+                    <li>Patch: Patch is used to send data to a server and update resource</li>
+                    <li>Delete: Delete method used to the specific resource data</li>
+                </ul>
+            </div>
         </div>
     </nav>
 </body>
+
 </html>
